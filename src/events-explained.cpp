@@ -83,6 +83,12 @@ int main()
         case sf::Event::MouseMoved:
           handleMouseMove(event);
           break;
+        case sf::Event::MouseEntered:
+          std::cout << "mouse entered" << std::endl;
+          break;
+        case sf::Event::MouseLeft:
+          std::cout << "mouse left" << std::endl;
+          break;
         default:
           break;
       }
@@ -169,7 +175,9 @@ void handleMouseMove(sf::Event event) {
     auto yScale = circle.getScale().y;
     std::cout << "disp " << xDisplacement << std::endl;
     std::cout << "xscale " << xScale << std::endl;
-    circle.setScale({xScale*xDisplacement/100+.1, yScale*yDisplacement/100+.1});
+    circle.setScale({
+      xScale*xDisplacement/100+ (float) .1, 
+      yScale*yDisplacement/100+ (float) .1});
     return;
   }
 

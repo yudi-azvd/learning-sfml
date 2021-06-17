@@ -7,7 +7,7 @@ int main()
   sf::RenderWindow window(sf::VideoMode(200, 200), "Events explained");
 
   float x = 0, y = 0;
-  float step = .02;
+  float step = .015;
   bool isMovingUp = false;
   bool isMovingDown = false;
   bool isMovingLeft = false;
