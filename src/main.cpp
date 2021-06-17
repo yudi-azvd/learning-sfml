@@ -16,8 +16,8 @@
 int main()
 {
   sf::RenderWindow window(sf::VideoMode(200, 200), "Events explained");
-  sf::CircleShape shape(100.f);
-  shape.setFillColor(sf::Color::Cyan);
+  sf::CircleShape circle(100.f);
+  circle.setFillColor(sf::Color::Cyan);
 
   int counter = 0;
 
@@ -31,7 +31,7 @@ int main()
     }
 
     window.clear();
-    window.draw(shape);
+    window.draw(circle);
     window.display();
   }
 

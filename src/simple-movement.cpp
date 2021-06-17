@@ -7,6 +7,7 @@ int main()
   sf::RenderWindow window(sf::VideoMode(200, 200), "Events explained");
 
   float x = 0, y = 0;
+  float step = .5;
 
   sf::CircleShape circle(4.f);
   circle.setFillColor(sf::Color::Red);
@@ -28,16 +29,16 @@ int main()
         char c = static_cast<char>(event.text.unicode);
         std::cout << "going to change coords" << std::endl;
         if (c == 'a') {
-          x -= 0.25;
+          x -= step;
         }
         if (c == 'w') {
-          y -= 0.25;
+          y -= step;
         }
         if (c == 's') {
-          y += 0.25;
+          y += step;
         }
         if (c == 'd') {
-          x += 0.25;
+          x += step;
         }
 
         std::cout << "(" << x << ", "<< y << ")" << std::endl;
