@@ -1,16 +1,26 @@
 cxx = g++
 cxx_include_libs = -lsfml-graphics -lsfml-window -lsfml-system
-build_dir = build
+build_dir = build#
 
+compile = @$(cxx) -c $^ -o $(build_dir)/$^.o
+link = @$(cxx) $(build_dir)/$^.o -o $(build_dir)/$@ $(cxx_include_libs)
 
 main: main.cpp
-	@$(cxx) -c $^
-	@$(cxx) main.o -o $(build_dir)/main $(cxx_include_libs)
+	$(compile)
+	$(link)
 
 events-explained: events-explained.cpp
-	@$(cxx) -c $^
-	@$(cxx) events-explained.o -o $(build_dir)/events-explained $(cxx_include_libs)
+	$(compile)
+	$(link)
+
+simple-movement: simple-movement.cpp
+	$(compile)
+	$(link)
+
+elaborate-movement: elaborate-movement.cpp
+	$(compile)
+	$(link)
 
 
 clean:
-	@rm *.o
+	@rm $(build_dir)/*
