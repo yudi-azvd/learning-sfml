@@ -4,7 +4,8 @@
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(200, 200), "Events explained");
+  sf::RenderWindow window(sf::VideoMode(200, 200), 
+    "Events explained", sf::Style::Close);
 
   float x = 0, y = 0;
   float step = .015;
