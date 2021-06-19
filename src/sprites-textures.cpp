@@ -13,7 +13,10 @@ int main()
   circle.setPosition(200, 200);
 
   sf::Texture texture;
+  sf::Texture textureTest;
   sf::Sprite sprite;
+  sf::Sprite spriteTest;
+  spriteTest.setPosition(0, 0);
 
   if (!texture.loadFromFile("src/wall-rock.jpg")) {
     std::cout << "not possible to open texture" << std::endl;
@@ -24,15 +27,16 @@ int main()
   //   std::cout << "not possible to open texture" << std::endl;
   // }
 
+  textureTest.create(500, 500);
 
   // texture.setSmooth(true);
   sprite.setTexture(texture);
   sprite.setTextureRect(sf::IntRect(0, 0, 65, 64));
   // sprite.setColor(sf::Color(255, 255, 255, 128));
   sprite.setColor(sf::Color::Green);
-  sprite.setPosition(sf::Vector2f(50, 50));
+  sprite.setPosition(sf::Vector2f(300, 300));
 
-  sf::Sprite testSprite = loadSprite("src/wall-rock.jpg");
+  sf::Sprite badSprite = loadSprite("src/wall-rock.jpg");
 
   while (window.isOpen())
   {
@@ -43,10 +47,15 @@ int main()
         window.close();
     }
 
-    window.clear();
-    window.draw(sprite);
-    window.draw(testSprite); // bad. textura inválida!!! observe como essa sprite é criada
+    window.clear(sf::Color(200, 200, 200, 255));
     window.draw(circle);
+    window.draw(sprite);
+    textureTest.update(window);
+    spriteTest.setTexture(textureTest);
+    spriteTest.setColor(sf::Color(255, 200, 255, 128));
+    spriteTest.setScale(.5, .5);
+    window.draw(spriteTest);
+    // window.draw(badSprite); // bad. textura inválida!!! observe como essa sprite é criada
     window.display();
   }
 

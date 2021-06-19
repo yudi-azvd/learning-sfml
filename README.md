@@ -20,9 +20,9 @@ Exemplo:
 
 
 ## Conteúdo/Progresso
-Confira [aqui](). 
+Confira [aqui](https://github.com/yudi-azvd/learning-sfml/issues/1). 
 
 
 ## Nota
-Não espere código organizado 😅. Tudo o que está aqui exemplifica uso básico
-do SFML.
+Não espere código organizado 😅. Tudo o que está aqui exemplifica apenas
+uso básico do SFML.
