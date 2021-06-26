@@ -9,7 +9,7 @@ link = @$(cxx) $(build_dir)/$^.o -o $(build_dir)/$@ $(cxx_include_libs)
 mkdir_p = mkdir -p
 
 
-all:  main events-explained keyboard-mouse sprites-textures simple-movement elaborate-movement
+all:  main events-explained keyboard-mouse sprites-textures simple-movement elaborate-movement text-font text-font2
 
 
 main: $(src_dir)/main.cpp
@@ -38,6 +38,17 @@ simple-movement: $(src_dir)/simple-movement.cpp
 	$(link)
 
 elaborate-movement: $(src_dir)/elaborate-movement.cpp
+	@$(mkdir_p) $(build_dir)/$(dir $^)
+	$(compile)
+	$(link)
+
+text-font: $(src_dir)/text-font.cpp
+	@$(mkdir_p) $(build_dir)/$(dir $^)
+	$(compile)
+	$(link)
+
+
+text-font2: $(src_dir)/text-font2.cpp
 	@$(mkdir_p) $(build_dir)/$(dir $^)
 	$(compile)
 	$(link)

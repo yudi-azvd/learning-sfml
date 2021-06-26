@@ -7,7 +7,7 @@ int main()
   sf::RenderWindow window(sf::VideoMode(200, 200), "Events explained");
 
   float x = 0, y = 0;
-  float step = .5;
+  float step = .9;
 
   sf::CircleShape circle(4.f);
   circle.setFillColor(sf::Color::Red);

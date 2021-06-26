@@ -25,18 +25,22 @@ int main()
       if (event.type == sf::Event::Closed)
         window.close();
       
-      isMovingLeft = sf::Keyboard::isKeyPressed(sf::Keyboard::A)
-        ? true : false;
-      isMovingUp = sf::Keyboard::isKeyPressed(sf::Keyboard::W)
-        ? true : false;
-      isMovingDown = sf::Keyboard::isKeyPressed(sf::Keyboard::S)
-        ? true : false;
-      isMovingRight = sf::Keyboard::isKeyPressed(sf::Keyboard::D)
-        ? true : false;
-
-      std::cout << "(" << x << ", "<< y << ")" << std::endl;
+      // aqui dentro é mais rápido
+      isMovingLeft = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
+      isMovingUp = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
+      isMovingDown = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
+      isMovingRight = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
+      // std::cout << "(" << x << ", "<< y << ")" << std::endl;
     }
 
+    // aqui fora é mais devagar
+    // isMovingLeft = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
+    // isMovingUp = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
+    // isMovingDown = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
+    // isMovingRight = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
+
+    // mover na diagonal é mais rápido pq é a soma de de dois 
+    // movimentos. tomar cuidado.
     if (isMovingLeft) {
       x -= step;
     }
